@@ -206,7 +206,7 @@ function s(metadata) { // a is bookinfo.metadata
     }
 }
 
-function usageExit(errCode = 0) {
+function usageExit(errCode) {
     console.log('usage: ' + process.argv[1] + ' -f <file> [--only-title]');
     console.log('Converts kindle books in a given Chrome/Chromium WebSQL file to HTML file(s).');
     console.log(' -f: Name of an sqlite file created by kindle cloud reader.');
@@ -219,21 +219,21 @@ function usageExit(errCode = 0) {
 }
 
 // improve readability
-const css = `
-<style>
-body {
-    margin: 0 auto;
-    max-width: 50em;
-    background: #FFFAFD;
-    font-size:100%;
-    line-height:1.5;
-}
+// this syntax is friendly to older versions of node ... 
+const css = '\
+<style> \
+body { \
+    margin: 0 auto; \
+    max-width: 50em; \
+    background: #FFFAFD; \
+    font-size:100%; \
+    line-height:1.5; \
+} \
+img { \
+    max-width: 100%; \
+} \
+</style>'
 
-img {
-    max-width: 100%;
-}
-</style>
-`
 
 var os = require('osenv');
 var fs = require('fs');
