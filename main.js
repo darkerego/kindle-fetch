@@ -205,7 +205,7 @@ function s(metadata) { // a is bookinfo.metadata
         return KindleCompression.lzGetDecompressionDictionary(b);
     }
 }
-
+//  changed 'errcode = 0' to simply 'errcode' - darkerego
 function usageExit(errCode) {
     console.log('usage: ' + process.argv[1] + ' -f <file> [--only-title]');
     console.log('Converts kindle books in a given Chrome/Chromium WebSQL file to HTML file(s).');
@@ -219,7 +219,8 @@ function usageExit(errCode) {
 }
 
 // improve readability
-// this syntax is friendly to older versions of node ... 
+
+// this syntax is friendly to older versions of node ...  - darkerego
 const css = '\
 <style> \
 body { \
